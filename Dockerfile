@@ -18,7 +18,7 @@ RUN apk add --update --no-cache --virtual .build-deps curl openssl \
     && chmod +x /usr/local/bin/kubectl \
     && apk del .build-deps
 
-RUN python3 -m pip install --upgrade --user awscli
+RUN pip3 install --upgrade awscli
 
 ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
